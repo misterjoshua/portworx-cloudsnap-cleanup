@@ -2,7 +2,6 @@
 
 HERE=$(dirname $0)
 
-
 CLOUDSNAPS_FILE=$HERE/zz_cloudsnaps.txt
 VELEROS_FILE=$HERE/zz_veleros.txt
 DELETES_FILE=$HERE/zz_deletes.txt
@@ -21,7 +20,7 @@ zvelero() {
 
 PX_POD=$(zkubectl get pods -lname=portworx -oname | head -n1)
 zpxctl() {
-  kubectl -n kube-system exec $PX_POD -- /opt/pwx/bin/pxctl $*
+  zkubectl -n kube-system exec $PX_POD -- /opt/pwx/bin/pxctl $*
 }
 
 echo "Getting all portworx cloudsnaps (get coffee - this takes 5-10 minutes)"
