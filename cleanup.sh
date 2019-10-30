@@ -44,7 +44,7 @@ if (( NUM_TO_DELETE > 0 )); then
 
     for id in $(cat $DELETES_FILE); do
       echo "Deleting $id"
-      pxctl cloudsnap delete -s $id
+      zpxctl cloudsnap delete -s $id
     done
   fi
 fi
